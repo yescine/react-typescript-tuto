@@ -1,6 +1,7 @@
 import React from 'react'
+export type toDoElemnt ={id:string, text:string}
 interface ToDolistProps{
-   items:{id:string, text:string}[]
+   items:toDoElemnt[]
 }
 const ToDoList:React.FC<ToDolistProps> = (props) => {
    const {items} = props

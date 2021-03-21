@@ -1,12 +1,14 @@
-import React from 'react';
-import TodoList from './components/ToDoList'
+import React,{useState} from 'react';
+import TodoList, { toDoElemnt } from './components/ToDoList'
 import NewToDO from './components/NewToDo'
 
 const App:React.FC = ( )=>{
-  const todos = [{id:'t1', text:'finish todo'}]
+  const todosInit = [{id:'t1', text:'finish todo'}]
+  const [todos, settodos] = useState<toDoElemnt[]>(todosInit)
 
   const toDoAdd = (text:string)=>{
     console.log(text);
+    settodos(prevToDo=>[...prevToDo,{id:Math.random().toString(),text}])
   }
 
   return(
