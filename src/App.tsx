@@ -11,10 +11,15 @@ const App:React.FC = ( )=>{
     settodos(prevToDo=>[...prevToDo,{id:Math.random().toString(),text}])
   }
 
+  const toDelAdd = (id:string)=>{
+    settodos(prevToDo=>{
+      return prevToDo.filter(elem=>elem.id!==id)
+    })
+  }
   return(
     <div className="App">
       <h1>TS: React</h1>
-      <TodoList items={todos} />
+      <TodoList items={todos} onDeleteItem={toDelAdd}/>
 
       <NewToDO toDoAdd={toDoAdd}/>
     </div>

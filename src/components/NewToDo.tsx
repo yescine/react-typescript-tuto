@@ -17,7 +17,7 @@ const NewToDo:React.FC <NewToDoProps> = props => {
 
    return (
       <form onSubmit={toDoHundle}>
-         <div>
+         <div className="form-control">
          <label htmlFor="todo-text">ToDoText</label>
          <input type="text" id="todo-text" ref={textInput} />
          </div>
